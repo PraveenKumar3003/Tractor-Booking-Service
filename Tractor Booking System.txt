@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Simple Tractor Booking</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #eef;
+    }
+    header {
+      background-color: #4CAF50;
+      color: white;
+      padding: 15px;
+      text-align: center;
+      font-size: 24px;
+    }
+    .container {
+      padding: 20px;
+      max-width: 600px;
+      margin: 30px auto;
+      background: white;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    }
+    form label {
+      margin-top: 10px;
+      font-weight: bold;
+    }
+    form input, form select, form button {
+      display: block;
+      width: 100%;
+      margin-top: 5px;
+      margin-bottom: 15px;
+      padding: 10px;
+      font-size: 16px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+    }
+    form button {
+      background-color: #4CAF50;
+      color: white;
+      border: none;
+      cursor: pointer;
+    }
+    form button:hover {
+      background-color: #45a049;
+    }
+    .images {
+      display: flex;
+      justify-content: space-around;
+      flex-wrap: wrap;
+      margin-top: 20px;
+    }
+    .images img {
+      width: 180px;
+      height: 120px;
+      border-radius: 8px;
+      margin: 10px;
+      object-fit: cover;
+      border: 2px solid #ddd;
+    }
+    #message {
+      color: green;
+      font-weight: bold;
+      text-align: center;
+      margin-top: 15px;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    🚜 Welcome to Tractor Booking
+  </header>
+
+  <div class="container">
+    <h2 style="text-align:center;">Book Your Tractor</h2>
+    <form onsubmit="showConfirmation(event)">
+      <label for="name">Your Name:</label>
+      <input type="text" id="name" placeholder="Enter your name" required>
+
+      <label for="location">Location:</label>
+      <input type="text" id="location" placeholder="Enter your location" required>
+
+      <label for="date">Date:</label>
+      <input type="date" id="date" required>
+
+      <label for="tractor">Select Tractor:</label>
+      <select id="tractor" required>
+        <option value="">-- Please choose a tractor --</option>
+        <option>🚜 Mahindra - Cultivator / Rotavator</option>
+        <option>🌾 John Deere - Harvesting</option>
+        <option>🧱 Sonalika - Baler Work</option>
+      </select>
+
+      <button type="submit">✅ Book Now</button>
+    </form>
+
+    <p id="message"></p>
+
+    <div class="images">
+      <img src="https://i0.wp.com/orissadiary.com/wp-content/uploads/2021/08/Mahavator.png?fit=500%2C375&ssl=1" alt="Mahindra Tractor" />
+      <img src="https://i.ytimg.com/vi/f27oBnyE9sU/maxresdefault.jpg" alt="John Deere Tractor" />
+      <img src="https://th.bing.com/th/id/OIP.MMYpmoqbmLW8dmZ9ko6I_wAAAA?cb=iwp2&pid=ImgDet&w=178&h=111&c=7&dpr=1.5" alt="Sonalika Tractor" />
+    </div>
+  </div>
+
+  <script>
+    function showConfirmation(event) {
+      event.preventDefault();
+      document.getElementById("message").textContent = "✅ Your tractor booking has been confirmed! Thank you for choosing us.";
+    }
+  </script>
+</body>
+</html>
+
